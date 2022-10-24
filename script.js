@@ -20,15 +20,17 @@ let computerScore = 0;
 const scores = document.createElement('div');
 scores.classList.add('scores');
 
-
 const content = document.createElement('p');
 content.classList.add('content');
 
 const play = document.createElement('p');
 play.classList.add('player');
+play.style.backgroundColor = "Blue";
+play.style.color = "White";
 
 const comp = document.createElement('p');
 comp.classList.add('computer');
+comp.style.backgroundColor = "Red";
 
 container.appendChild(scores);
 
@@ -56,8 +58,11 @@ function playRound(playerChoice) {
         scores.appendChild(comp);
     }
     if (computerScore === 5 ) {
+        content.style.backgroundColor = "red";
         content.textContent = `Game over. You lost! Your final score: ${playerScore}. The computer's final score: ${computerScore}.`
     } else if (playerScore === 5) {
+        content.style.backgroundColor = "Blue";
+        content.style.color = "white";
         content.textContent = `Game over. You won! Your final score: ${playerScore}. The computer's final score: ${computerScore}.`
     }
 }
@@ -78,7 +83,4 @@ scissors.addEventListener('click', function() {
 });
 
 
-//let playerChoice = prompt("Please choose one of: Rock, Paper or Scissors. Type your answer in full: ");
-
-//console.log(playRound(playerChoice, computerChoice));
 
